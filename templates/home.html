@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar__brand">
+            <img src="static/logo.svg" alt="Marcoblog Image"/>Macroblog
+        </div>
+        <ul class="navbar__navigation">
+            <li class="navbar__navigation-item">
+                <a href="#" class="navbar__link">Recent</a>
+            </li>
+            <li class="navbar__navigation-item">
+                <a href="#" class="navbar__link">Calendar</a>
+            </li>
+        </ul>
+    </header>
+    <main class="main">
+        <section>
+            <h1>Add new Entry</h1>
+            <form class="form" action="/" method="POST">
+                <label for="sample-field" class="form-lable">Enter Content:</label>
+                <textarea class="form-content" type="text" name="content" id="sample-field"></textarea>
+                <button type="submit" class="form-submit">Add Entry</button>
+            </form>
+        </section>
+        <section>
+            <h1>Recents Posts</h1>
+            {% for entry in entries %}
+            <article class="entry">
+                <div>
+                    <h2 class="entry__title">{{ entry[0]  | truncate(30,true)}}</h2>
+                    <time class="entry__date" datetime="{{ entry[1] }}">* {{ entry[2] }}</time>
+                </div>
+                <p class="entry__content">{{ entry[0] }}</p>
+            </article>
+            {%endfor %}
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="left">
+                <a  class="footer__item">Made by Rewati Raman</a>
+                <a  class="footer__item">Checkout my other project</a>
+            </section> 
+            <section class="right">
+                <a  class="footer__item">Recent</a>
+                <a  class="footer__item">Calendar</a>
+            </section>
+            <section class="footer__column">
+                <a  class="footer__item">About</a>
+                <a  class="footer__item">How this is made</a>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
