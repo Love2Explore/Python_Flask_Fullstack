@@ -1,5 +1,5 @@
 # Python_Flask_Fullstack
-Flask with HML/JS/CSS 
+Flask with HML/JS/CSS/Jinja2
 
 # Start Flask app in Git Bash Command
 export FLASK_APP=app.py

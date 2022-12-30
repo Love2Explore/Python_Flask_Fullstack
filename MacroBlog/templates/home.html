@@ -1,3 +1,4 @@
+{% from "macro.jinja2" import m_mist %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="static/css/style.css" />
 </head>
 <body>
+    {{m_mist(5)}}
     <header class="navbar">
         <div class="navbar__brand">
             <img src="static/logo.svg" alt="Marcoblog Image"/>Macroblog
